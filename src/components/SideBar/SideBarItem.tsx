@@ -21,7 +21,7 @@ export default function SideBarItem({
       variant={active ? "activeLink" : "link"}
       onClick={() => handleClick()}
     >
-      <span className="text-purple-300 w-2">{value}</span>
+      <span className="text-purple-600 w-2">{value}</span>
       <span className="w-5">{text}</span>
       <span className="flex justify-end">
         <EllipsisVertical className="mr-2 h-4 w-4 text-grey-400" />
