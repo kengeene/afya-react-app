@@ -15,15 +15,15 @@ export default function SideBarItem({
   return (
     <Button
       className={
-        "grid grid-cols-3 w-full my-5 border-2 border-gray-200" +
+        "grid grid-cols-12 w-full my-5 border-2 border-gray-200" +
         (active ? "bg-purple-600 text-white" : " bg-white text-gray-500")
       }
       variant={active ? "activeLink" : "link"}
       onClick={() => handleClick()}
     >
-      <span className="text-purple-600 w-2">{value}</span>
-      <span className="w-5">{text}</span>
-      <span className="flex justify-end">
+      <span className="col-span-2">{value}</span>
+      <span className="col-span-8">{text}</span>
+      <span className="col-span-2 flex justify-end">
         <EllipsisVertical className="mr-2 h-4 w-4 text-grey-400" />
       </span>
     </Button>
