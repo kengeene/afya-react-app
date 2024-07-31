@@ -13,6 +13,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
+import { useState,useEffect } from "react";
 
 const chartConfig = {
   desktop: {
@@ -21,22 +22,21 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export default function Chart({
-  chartTitle = "line chart",
-  chartData = [
-    { month: "January", desktop: 186 },
-    { month: "February", desktop: 305 },
-    { month: "March", desktop: 237 },
-    { month: "April", desktop: 73 },
-    { month: "May", desktop: 210 },
-    { month: "June", desktop: 190 },
-  ],
-}) {
-  const dataVariance =
-    ((chartData[chartData.length - 1].desktop -
+
+type ChartData = {
+  month: string;
+  desktop: number;
+}
+
+export default function Chart({chartTitle,chartData}: {chartTitle: string, chartData: ChartData[]}) {
+  const [variance, setVariace] = useState(0);
+
+    useEffect(() => {
+     setVariace(((chartData[chartData.length - 1].desktop -
       chartData[chartData.length - 2].desktop) /
       chartData[0].desktop) *
-    100;
+    100)
+    }, [chartData]);
   return (
     <Card>
       <CardHeader>
@@ -48,16 +48,16 @@ export default function Chart({
             {chartData[chartData.length - 1].desktop}k
           </span>
           <span className="text-xs text-gray-400">
-            {dataVariance > 0 ? "Positive" : "Negative"}
+            {variance > 0 ? "Positive" : "Negative"}
           </span>
           <div
             className={
               "flex flex-row	items-center text-xs " +
-              (dataVariance > 0 ? "text-green-400" : "text-red-400")
+              (variance > 0 ? "text-green-400" : "text-red-400")
             }
           >
-            {dataVariance > 0 ? <ChevronUp /> : <ChevronDown />}
-            <span>{Math.floor(dataVariance)}</span>{" "}
+            {variance > 0 ? <ChevronUp /> : <ChevronDown />}
+            <span>{Math.floor(variance)}</span>{" "}
           </div>
         </div>
         <ChartContainer config={chartConfig}>
