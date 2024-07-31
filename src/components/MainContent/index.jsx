@@ -1,4 +1,5 @@
 import Chart from "./Chart";
+import { TableComponent } from "./Table";
 export default function MainContent() {
   const chartData = [
     {
@@ -37,7 +38,7 @@ export default function MainContent() {
   ];
 
   return (
-    <div className="col-span-2 p-5 rounded-lg grid grid-cols-3 gap-10">
+    <div className="col-span-3 p-5 rounded-lg grid grid-cols-3 gap-10">
       <div className="col-span-3">1</div>
       <div className="col-span-3">2</div>
       {/* Chartdata row */}
@@ -48,7 +49,7 @@ export default function MainContent() {
           chartData={item.chartData}
         />
       ))}
-      <div className="col-span-3">6</div>
+      <div className="bg-white col-span-3"><TableComponent/></div>
     </div>
   );
 }
