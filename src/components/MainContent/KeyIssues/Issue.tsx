@@ -9,7 +9,7 @@ export default function Issue({
   title: string;
   location: string;
   className: string;
-  handleClick?: () => void;
+  handleClick: () => void;
 }) {
   return (
     <div
