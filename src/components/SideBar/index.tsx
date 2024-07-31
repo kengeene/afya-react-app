@@ -1,4 +1,4 @@
-import SideBarItem from "./SideBar/SideBarItem";
+import SideBarItem from "./SideBarItem";
 import { useMemo } from "react";
 export default function SideBar() {
 
