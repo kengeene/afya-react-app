@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 function TopBar() {
   return (
-    <div className="grid grid-cols-3 p-4 items-center">
+    <div className="grid grid-cols-3 p-4 items-center bg-white">
       <div>
         <Button
           variant="secondary"
