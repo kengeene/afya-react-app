@@ -37,9 +37,10 @@ export default function MainContent() {
   ];
 
   return (
-    <div className="col-span-2 bg-white p-5 rounded-lg grid grid-cols-3 gap-10">
+    <div className="col-span-2 p-5 rounded-lg grid grid-cols-3 gap-10">
       <div className="col-span-3">1</div>
       <div className="col-span-3">2</div>
+      {/* Chartdata row */}
       {chartData.map((item, index) => (
         <Chart
           key={index}

@@ -38,7 +38,7 @@ export default function Chart({chartTitle,chartData}: {chartTitle: string, chart
     100)
     }, [chartData]);
   return (
-    <Card>
+    <Card className="bg-white">
       <CardHeader>
         <CardTitle className="text-sm">{chartTitle}</CardTitle>
       </CardHeader>
