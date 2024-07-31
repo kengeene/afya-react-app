@@ -28,15 +28,25 @@ type ChartData = {
   desktop: number;
 }
 
-export default function Chart({chartTitle,chartData}: {chartTitle: string, chartData: ChartData[]}) {
+export default function LineChartComponent({
+  chartTitle,
+  chartData,
+  measurementUnit,
+}: {
+  chartTitle: string;
+  chartData: ChartData[];
+  measurementUnit: string;
+}) {
   const [variance, setVariace] = useState(0);
 
-    useEffect(() => {
-     setVariace(((chartData[chartData.length - 1].desktop -
-      chartData[chartData.length - 2].desktop) /
-      chartData[0].desktop) *
-    100)
-    }, [chartData]);
+  useEffect(() => {
+    setVariace(
+      ((chartData[chartData.length - 1].desktop -
+        chartData[chartData.length - 2].desktop) /
+        chartData[0].desktop) *
+        100
+    );
+  }, [chartData]);
   return (
     <Card className="bg-white">
       <CardHeader>
@@ -48,7 +58,7 @@ export default function Chart({chartTitle,chartData}: {chartTitle: string, chart
             {chartData[chartData.length - 1].desktop}k
           </span>
           <span className="text-xs text-gray-400">
-            {variance > 0 ? "Positive" : "Negative"}
+            {measurementUnit}
           </span>
           <div
             className={

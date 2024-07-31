@@ -1,9 +1,10 @@
-import Chart from "./Chart";
+import LineChart from "./LineChart";
 import { TableComponent } from "./Table";
 export default function MainContent() {
   const chartData = [
     {
-      chartTitle: "line chart",
+      chartTitle: "Foot Fall",
+      measurementUnit: "Patients",
       chartData: [
         { month: "January", desktop: 186 },
         { month: "February", desktop: 21 },
@@ -14,7 +15,8 @@ export default function MainContent() {
       ],
     },
     {
-      chartTitle: "line chart",
+      chartTitle: "Patient Satisfaction",
+      measurementUnit: "NPS",
       chartData: [
         { month: "January", desktop: 324 },
         { month: "February", desktop: 12 },
@@ -25,7 +27,8 @@ export default function MainContent() {
       ],
     },
     {
-      chartTitle: "line chart",
+      chartTitle: "Revenue",
+      measurementUnit: "Kenya Shillings",
       chartData: [
         { month: "January", desktop: 186 },
         { month: "February", desktop: 305 },
@@ -43,13 +46,16 @@ export default function MainContent() {
       <div className="col-span-3">2</div>
       {/* Chartdata row */}
       {chartData.map((item, index) => (
-        <Chart
+        <LineChart
           key={index}
           chartTitle={item.chartTitle}
           chartData={item.chartData}
+          measurementUnit={item.measurementUnit}
         />
       ))}
-      <div className="bg-white col-span-3"><TableComponent/></div>
+      <div className="bg-white col-span-3">
+        <TableComponent />
+      </div>
     </div>
   );
 }
