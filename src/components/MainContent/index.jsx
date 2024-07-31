@@ -1,5 +1,7 @@
 import LineChart from "./LineChart";
 import { TableComponent } from "./Table";
+import Monitoring from "./Monitoring";
+
 export default function MainContent() {
   const chartData = [
     {
@@ -43,7 +45,8 @@ export default function MainContent() {
   return (
     <div className="col-span-3 p-5 rounded-lg grid grid-cols-3 gap-10">
       <div className="col-span-3">1</div>
-      <div className="col-span-3">2</div>
+      {/* monitoring */}
+      <Monitoring/>
       {/* Chartdata row */}
       {chartData.map((item, index) => (
         <LineChart
