@@ -38,3 +38,18 @@ export const GET_ANALYTICS = gql`
     }
   }
 `;
+
+export const GET_NPS_DATA = gql`
+  query NpsMetrics {
+    npsMetrics {
+      id
+      location
+      staffName
+      efficiencyDelta
+      npsDelta
+      efficiency
+      reportedIssues
+      npsScore
+    }
+  }
+`;
