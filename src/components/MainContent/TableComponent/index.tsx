@@ -9,8 +9,6 @@ export default function TableSection() {
   const [tableData, setTableData] = useState([]);
   useEffect(() => {
     if (data) {
-      console.log(data);
-
       setTableData(data.npsMetrics);
     }
   }, [data]);
