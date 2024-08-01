@@ -1,7 +1,7 @@
 import SideBarItem from "./SideBarItem";
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
-import { GET_LOCATIONS } from "@/queries";
+import { GET_LOCATIONS } from "@/graphql/queries";
 
 export default function SideBar() {
   const { loading, data } = useQuery(GET_LOCATIONS);
