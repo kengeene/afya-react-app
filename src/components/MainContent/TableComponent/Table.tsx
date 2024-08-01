@@ -72,7 +72,7 @@ export function TableComponent({
       <TableHeader>
         <TableRow>
           {tableHeadings.map((heading) => (
-            <TableHead className={heading.className}>{heading.text}</TableHead>
+            <TableHead>{heading.text}</TableHead>
           ))}
         </TableRow>
       </TableHeader>

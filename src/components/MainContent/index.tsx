@@ -1,4 +1,4 @@
-import { TableComponent } from "./Table";
+import TableSection from "./TableComponent";
 import Monitoring from "./Monitoring";
 import KeyIssues from "./KeyIssues";
 import AnalyticMetrics from "./AnalyticMetrics";
@@ -9,12 +9,11 @@ export default function MainContent() {
       {/* key issues */}
       <KeyIssues />
       {/* monitoring */}
-      <Monitoring/>
+      <Monitoring />
       {/* Chartdata row */}
-     <AnalyticMetrics/>
-      <div className="bg-white col-span-3">
-        <TableComponent />
-      </div>
+      <AnalyticMetrics />
+      {/* Table Row*/}
+      <TableSection />
     </div>
   );
 }
