@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from '@/App'
 import '@/assets/css/index.css'
@@ -9,6 +9,7 @@ import {
   InMemoryCache,
   ApolloProvider,
 } from "@apollo/client";
+import Loading from "@/components/Loading";
 
 const baseClasses = "my-5 :hover cursor-pointer";
 
@@ -22,16 +23,18 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <div className="grid grid-cols-12 bg-white">
-        <div className="flex flex-col justify-center items-center h-1/2">
-          <Folder className={baseClasses} />
-          <Activity className={baseClasses + " text-purple-600"} />
-          <MessageSquareMore className={baseClasses} />
-          <SlidersVertical className={baseClasses} />
-        </div>
-        <div className="col-span-11">
-          <TopBar />
-          <App />
-        </div>
+        <Suspense fallback={<Loading />}>
+          <div className="flex flex-col justify-center items-center h-1/2">
+            <Folder className={baseClasses} />
+            <Activity className={baseClasses + " text-purple-600"} />
+            <MessageSquareMore className={baseClasses} />
+            <SlidersVertical className={baseClasses} />
+          </div>
+          <div className="col-span-11">
+            <TopBar />
+            <App />
+          </div>
+        </Suspense>
       </div>
     </ApolloProvider>
   </React.StrictMode>
