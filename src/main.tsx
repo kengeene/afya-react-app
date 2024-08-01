@@ -14,7 +14,7 @@ const baseClasses = "my-5 :hover cursor-pointer";
 
 // Initialize Apollo Client
 const client = new ApolloClient({
-  uri: "http://localhost:4000/",
+  uri: import.meta.env.VITE_APOLLO_API,
   cache: new InMemoryCache(),
 });
 
