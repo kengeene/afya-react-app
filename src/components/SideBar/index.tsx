@@ -1,26 +1,33 @@
 import SideBarItem from "./SideBarItem";
-import { useMemo, useState } from "react";
-export default function SideBar() {
+import { useEffect, useState } from "react";
+import { useQuery } from "@apollo/client";
+import { GET_LOCATIONS } from "@/queries";
 
-  const menuItems = useMemo(
-    () => [
-      { id: 1, value: 7, text: "Kiambiu", active: true },
-      { id: 2, value: 12, text: "Mukuru Kwa Ruben" },
-      { id: 3, value: 26, text: "Mukuru Kwa Njenga" },
-      { id: 4, value: 38, text: "Baba Ndogo" },
-      { id: 5, value: 41, text: "Kosovo" },
-      { id: 6, value: 24, text: "Mukuru Kayaba" },
-    ],
-    []
-  );
-  const [activeItem, setActiveItem] = useState(2);
+export default function SideBar() {
+  const { loading, data } = useQuery(GET_LOCATIONS);
+  const [activeItem, setActiveItem] = useState('1');
+  const [menuItems, setMenuItems] = useState([]);
+
+  useEffect(() => {
+      if (data){
+        setActiveItem(data.locations[0].id);
+        setMenuItems(data.locations);
+      }
+    }, [data]);
+
+    if (loading) return <p>Loading...</p>;
+
 
   return (
     <div className="bg-white p-5 rounded-lg">
       <span className="text-gray-400 text-sm">VISITS</span>
       {
-        menuItems.map((item) => (
-          <SideBarItem key={item.id} value={item.value} text={item.text} handleClick={() => setActiveItem(item.id)} active={activeItem === item.id} />
+       menuItems.length > 0 && menuItems.map((item: {
+         id: string;
+         visits: number;
+         name: string;
+       }) => (
+          <SideBarItem key={item.id} value={item.visits} text={item.name} handleClick={() => setActiveItem(item.id)} active={activeItem === item.id} />
         ))
       }
     </div>
