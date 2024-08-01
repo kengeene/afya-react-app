@@ -1,7 +1,5 @@
+import { Skeleton } from "@/components/ui/skeleton";
+
 export default function Loading() {
-  return (
-    <div className="flex justify-center items-center h-screen">
-      return <p>Loading...</p>
-    </div>
-  );
+  return <Skeleton className="w-[100px] h-[20px] rounded-full" />;
 }
