@@ -11,3 +11,15 @@ export const GET_LOCATIONS = gql`
     }
   }
 `;
+
+
+export const GET_ISSUES = gql`
+  query GetIssues {
+    keyIssues {
+      id
+      type
+      location
+      count
+    }
+  }
+`;

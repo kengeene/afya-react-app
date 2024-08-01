@@ -1,48 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Issue from "./Issue";
+import { useQuery } from "@apollo/client";
+import { GET_ISSUES } from "@/graphql/queries";
+import Loading from "@/components/Loading";
+
 export default function KeyIssues() {
-  const [keyIssues] = useState([
-    {
-      id: 1,
-      title: "Patient Satisfaction",
-      location: "South Africa",
-    },
-    {
-      id: 2,
-      title: "Opened Late",
-      location: "South Africa",
-    },
-    {
-      id: 3,
-      title: "Bad Receipts",
-      location: "South Africa",
-    },
-    {
-      id: 4,
-      title: "Late Check-In",
-      location: "South Africa",
-    },
-    {
-      id: 5,
-      title: "Delay in Lab",
-      location: "South Africa",
-    },
-    {
-      id: 6,
-      title: "Careless waste disposal",
-      location: "South Africa",
-    },
-  ]);
-  const [selectedIssueId, setSelectedIssueId] = useState(1);
+  const { loading, data } = useQuery(GET_ISSUES);
+
+  const [keyIssues, setKeyIssues] = useState([])
+  ;
+  const [selectedIssueId, setSelectedIssueId] = useState('1');
+
+  useEffect(() => {
+    if (data) {
+      setSelectedIssueId(data.keyIssues[0].id);
+      setKeyIssues(data.keyIssues);
+    }
+  }, [data]);
+
+  if (loading) return <Loading />;
 
   return (
     <div className="col-span-3 bg-white p-5">
       <span className=" text-sm text-gray-400 my-10">KEY ISSUES</span>
       <div className="grid grid-cols-3 gap-10">
-        {keyIssues.map((issue, key) => (
+        {keyIssues.map((issue: {
+          id: string;
+          type: string;
+          location: string;
+        }, key) => (
           <Issue
             key={key}
-            title={issue.title}
+            title={issue.type}
             location={issue.location}
             handleClick={() => setSelectedIssueId(issue.id)}
             className={
