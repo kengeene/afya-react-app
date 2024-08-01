@@ -23,3 +23,18 @@ export const GET_ISSUES = gql`
     }
   }
 `;
+
+
+export const GET_ANALYTICS = gql`
+  query AnalyticMetrics {
+    analyticMetrics {
+      id
+      name
+      unit
+      data {
+        month
+        value
+      }
+    }
+  }
+`;

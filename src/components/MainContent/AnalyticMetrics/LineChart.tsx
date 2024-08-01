@@ -16,8 +16,8 @@ import {
 import { useState,useEffect } from "react";
 
 const chartConfig = {
-  desktop: {
-    label: "Desktop",
+  value: {
+    label: "Value",
     color: "hsl(var(--chart-1))",
   },
 } satisfies ChartConfig
@@ -25,7 +25,7 @@ const chartConfig = {
 
 type ChartData = {
   month: string;
-  desktop: number;
+  value: number;
 }
 
 export default function LineChartComponent({
@@ -41,9 +41,9 @@ export default function LineChartComponent({
 
   useEffect(() => {
     setVariace(
-      ((chartData[chartData.length - 1].desktop -
-        chartData[chartData.length - 2].desktop) /
-        chartData[0].desktop) *
+      ((chartData[chartData.length - 1].value -
+        chartData[chartData.length - 2].value) /
+        chartData[0].value) *
         100
     );
   }, [chartData]);
@@ -55,7 +55,7 @@ export default function LineChartComponent({
       <CardContent className="grid grid-cols-2">
         <div className="flex flex-col">
           <span className="text-lg font-bold text-purple-600">
-            {chartData[chartData.length - 1].desktop}k
+            {chartData[chartData.length - 1].value}k
           </span>
           <span className="text-xs text-gray-400">
             {measurementUnit}
@@ -85,7 +85,7 @@ export default function LineChartComponent({
               content={<ChartTooltipContent hideLabel />}
             />
             <Line
-              dataKey="desktop"
+              dataKey="value"
               type="natural"
               stroke="black"
               strokeWidth={2}
