@@ -1,4 +1,3 @@
-import '@/assets/css/App.css'
 import SideBar from '@/components/SideBar/index';
 import MainContent from '@/components/MainContent/index';
 
