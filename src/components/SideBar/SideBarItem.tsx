@@ -1,6 +1,6 @@
 import { EllipsisVertical } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/shared/button";
 export default function SideBarItem({
   value,
   text,

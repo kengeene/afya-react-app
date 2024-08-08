@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Issue from "./Issue";
 import { useQuery } from "@apollo/client";
 import { GET_ISSUES } from "@/graphql/queries";
-import Loading from "@/components/ui/loading";
+import Loading from "@/components/shared/loading";
 
 export default function KeyIssues() {
   const { loading, data } = useQuery(GET_ISSUES);

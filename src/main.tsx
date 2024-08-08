@@ -9,7 +9,7 @@ import {
   InMemoryCache,
   ApolloProvider,
 } from "@apollo/client";
-import Loading from "@/components/ui/loading";
+import Loading from "@/components/shared/loading";
 
 const baseClasses = "my-5 :hover cursor-pointer";
 

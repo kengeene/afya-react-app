@@ -1,7 +1,7 @@
 import { TableComponent } from "./Table";
 import { useQuery } from "@apollo/client";
 import { GET_NPS_DATA } from "@/graphql/queries";
-import Loading from "@/components/ui/loading";
+import Loading from "@/components/shared/loading";
 import { useEffect, useState } from "react";
 
 export default function TableSection() {

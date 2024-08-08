@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/shared/button";
 import { Plus } from "lucide-react";
-import { Progress } from "@/components/ui/progress";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Progress } from "@/components/shared/progress";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/shared/avatar";
 
 function TopBar() {
   return (

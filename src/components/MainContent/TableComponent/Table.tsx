@@ -5,9 +5,9 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table";
+} from "@/components/shared/table";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { Progress } from "@/components/ui/progress";
+import { Progress } from "@/components/shared/progress";
 
 const invoices = [
   {
