@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import LineChart from "./LineChart";
 import { useQuery } from "@apollo/client";
 import { GET_ANALYTICS } from "@/graphql/queries";
-import Loading from "@/components/Loading";
+import Loading from "@/components/ui/loading";
 import { ChartDataItem } from "@/types";
 
 export default function AnalyticMetrics() {
