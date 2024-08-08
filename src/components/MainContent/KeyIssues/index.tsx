@@ -23,6 +23,8 @@ export default function KeyIssues() {
   return (
     <div className="col-span-3 bg-white p-5">
       <span className=" text-sm text-gray-400 my-10">KEY ISSUES</span>
+      {
+      loading ? <Loading /> :
       <div className="grid grid-cols-3 gap-10">
         {keyIssues.map((issue: {
           id: string;
@@ -40,6 +42,7 @@ export default function KeyIssues() {
           />
         ))}
       </div>
+      }
     </div>
   );
 }
