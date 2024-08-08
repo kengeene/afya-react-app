@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import LineChart from "./LineChart";
+import LineChart from "./lineChart";
 import { useQuery } from "@apollo/client";
 import { GET_ANALYTICS } from "@/graphql/queries";
 import Loading from "@/components/shared/loading";

@@ -1,4 +1,4 @@
-import { TableComponent } from "./Table";
+import { TableComponent } from "./table";
 import { useQuery } from "@apollo/client";
 import { GET_NPS_DATA } from "@/graphql/queries";
 import Loading from "@/components/shared/loading";

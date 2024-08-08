@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from '@/App'
 import '@/assets/css/index.css'
-import TopBar from "@/components/TopBar";
+import TopBar from "@/components/topBar";
 import { Folder, Activity, MessageSquareMore, SlidersVertical } from "lucide-react";
 import {
   ApolloClient,

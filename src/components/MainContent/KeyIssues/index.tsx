@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Issue from "./Issue";
+import Issue from "./issue";
 import { useQuery } from "@apollo/client";
 import { GET_ISSUES } from "@/graphql/queries";
 import Loading from "@/components/shared/loading";

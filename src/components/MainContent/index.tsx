@@ -1,7 +1,7 @@
-import TableSection from "./TableComponent";
-import Monitoring from "./Monitoring";
-import KeyIssues from "./KeyIssues";
-import AnalyticMetrics from "./AnalyticMetrics";
+import TableSection from "./tableComponent";
+import Monitoring from "./monitoring";
+import KeyIssues from "./keyIssues";
+import AnalyticMetrics from "./analyticMetrics";
 
 export default function MainContent() {
   return (

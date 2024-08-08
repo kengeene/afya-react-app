@@ -1,4 +1,4 @@
-import SideBarItem from "./SideBarItem";
+import SideBarItem from "./sideBarItem";
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_LOCATIONS } from "@/graphql/queries";
