@@ -21,8 +21,8 @@ const client = new ApolloClient({
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <div className="grid grid-cols-12 bg-white">
+    <div className="grid grid-cols-12 bg-white">
+      <ApolloProvider client={client}>
         <Suspense fallback={<Loading />}>
           <div className="flex flex-col justify-center items-center h-1/2">
             <Folder className={baseClasses} />
@@ -35,7 +35,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <App />
           </div>
         </Suspense>
-      </div>
-    </ApolloProvider>
+      </ApolloProvider>
+    </div>
   </React.StrictMode>
 );
