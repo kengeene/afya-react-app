@@ -21,7 +21,7 @@ const client = new ApolloClient({
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <div className="grid grid-cols-12 bg-white">
+    <div className="grid grid-cols-12 bg-white h-screen w-screen">
       <ApolloProvider client={client}>
         <Suspense fallback={<Loading />}>
           <div className="flex flex-col justify-center items-center h-1/2">
@@ -30,7 +30,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <MessageSquareMore className={baseClasses} />
             <SlidersVertical className={baseClasses} />
           </div>
-          <div className="col-span-11">
+          <div className="col-span-11 h-screen">
             <TopBar />
             <App />
           </div>
