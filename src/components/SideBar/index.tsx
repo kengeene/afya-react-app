@@ -1,4 +1,4 @@
-import SideBarItem from "./sideBarItem";
+import SideBarItem from "@/components/SideBar/sideBarItem.tsx";
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_LOCATIONS } from "@/graphql/queries";
